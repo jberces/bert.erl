@@ -1,9 +1,11 @@
 %%% See http://github.com/mojombo/bert.erl for documentation.
 %%% MIT License - Copyright (c) 2009 Tom Preston-Werner <tom@mojombo.com>
+%%% MIT License - Copyright (c) 2016 Jozsef Berces <jozsef.berces@gmail.com>
 
 -module(bert).
--version('1.1.0').
+-version('1.1.1').
 -author("Tom Preston-Werner").
+-author("Jozsef Berces").
 
 -export([encode/1, decode/1]).
 
