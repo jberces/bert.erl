@@ -41,6 +41,11 @@ Examples
     bert:encode(D1).
     % -> <<131,104,9,100,0,4,100,105,99,116,97,0,97,16,97,16,97,8,...>>
 
+    % Encode an Erlang proplist:
+    P = [{apple, red}, {pear, yellow}].
+    bert:encode(P).
+    % -> <<131,104,3,100,0,4,98,101,114,116,100,0,4,100,105,99,116,108,...>>
+ 
     % Decode a BERT binary:
     bert:decode(<<131,108,0,0,0,7,97,42,99,51,46,49,52,...>>).
     % -> [42, 3.14, banana, {xy, 5, 10}, <<"robot">>, true, false]
