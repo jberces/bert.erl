@@ -7,16 +7,17 @@ This module is Semantic Versioning (http://semver.org) compliant.
 The following types can be automatically encoded and decoded.
 See http://www.erlang.org/eeps/eep-0008.html for type definitions.
 
-  integer() -> BERT integer
-  float()   -> BERT float
-  atom()    -> BERT atom
-  tuple()   -> BERT tuple
-  list()    -> BERT list or BERT bytelist
-  string()  -> BERT list or BERT bytelist (you probably want binary)
-  binary()  -> BERT binary
-  []        -> BERT nil (complex)
-  bool()    -> BERT boolean (complex)
-  dict()    -> BERT dict (complex)
+  integer()  -> BERT integer
+  float()    -> BERT float
+  atom()     -> BERT atom
+  tuple()    -> BERT tuple
+  list()     -> BERT list or BERT bytelist
+  string()   -> BERT list or BERT bytelist (you probably want binary)
+  binary()   -> BERT binary
+  []         -> BERT nil (complex)
+  bool()     -> BERT boolean (complex)
+  dict()     -> BERT dict (complex)
+  proplist() -> BERT dict (complex)
 
 Because times and regular expressions types cannot be automatically
 detected, you must encode and decode those types manually.
