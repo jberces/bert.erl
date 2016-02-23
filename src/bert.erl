@@ -39,6 +39,8 @@ encode_term(Term) ->
 	    {bert, false};
 	Dict when is_record(Term, dict, 8) ->
 	    {bert, dict, dict:to_list(Dict)};
+	Dict when is_record(Term, dict, 9) -> % newer dict has 9 elems
+	    {bert, dict, dict:to_list(Dict)};
 	List when is_list(Term) ->
 	    case is_proplist(List) of
 		true ->
@@ -79,8 +81,8 @@ decode_term(Term) ->
 	    true;
 	{bert, false} ->
 	    false;
-	{bert, dict, Dict} ->
-	    dict:from_list(Dict);
+	{bert, dict, Dict} -> % return proplist instead of dict
+	    Dict;
 	{bert, Other} ->
 	    {bert, Other};
 	List when is_list(Term) ->
