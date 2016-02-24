@@ -84,7 +84,7 @@ decode_term(Term) ->
 	{bert, false} ->
 	    false;
 	{bert, dict, Dict} -> % return proplist instead of dict
-	    Dict;
+	    lists:map((fun decode_term/1), Dict);
 	{bert, Other} ->
 	    {bert, Other};
 	List when is_list(Term) ->
