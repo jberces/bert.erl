@@ -33,7 +33,7 @@ decode(Bin) ->
 
 encode_term(Term) ->
     case Term of
-	[] ->
+	undefined ->
 	    {bert, nil};
 	true ->
 	    {bert, true};
@@ -46,7 +46,7 @@ encode_term(Term) ->
 	List when is_list(Term) ->
 	    case is_proplist(List) of
 		true ->
-		    {bert, dict, List};
+		    {bert, dict, lists:map((fun encode_term/1), List)};
 		false ->
 		    lists:map((fun encode_term/1), List)
 	    end;
@@ -78,7 +78,7 @@ is_proplist(_) ->
 decode_term(Term) ->
     case Term of
 	{bert, nil} ->
-	    [];
+	    undefined;
 	{bert, true} ->
 	    true;
 	{bert, false} ->
