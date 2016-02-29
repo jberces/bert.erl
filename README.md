@@ -21,7 +21,7 @@ See http://www.erlang.org/eeps/eep-0008.html for type definitions.
   
   binary()   -> BERT binary
   
-  []         -> BERT nil (complex)
+  undefined  -> BERT nil (complex)
   
   bool()     -> BERT boolean (complex)
   
